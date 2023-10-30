@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loginForm</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="loginForm">
+		<div class="form_loginForm">
+            <form onsubmit="handleLogin(); return false">
+				<h1>Login</h1>
+				<input type="text" id="username" placeholder="username" required>
+				<input type="password" id="password" placeholder="password" required>
+                <!-- <a href="faizan.html"> -->
+                <button type="submit" class="btn">Log In</button>
+                <p> <a href="#">Forgot your password?</a></p>
+				
+			</form>
+		</div>
+	</div>
+    <script>
+
+        function handleLogin() {
+            const username = document.querySelector("#username").value
+            const password = document.querySelector("#password").value
+            if (username === "faizan" && password === "123"){
+                localStorage.setItem("authentication", true)
+                window.location.href = "faizan.html"
+            }
+            else {
+                const errorBox = document.querySelector("#error")
+                errorBox.classList.add("#active")
+            }
+        }
+    </script>
+
+</body>
+
+</html>
